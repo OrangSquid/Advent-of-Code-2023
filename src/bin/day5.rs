@@ -94,6 +94,6 @@ fn main() {
     }
 
     seeds = match_seeds(&seeds, &soil_map);
-    println!("{}", Instant::now().duration_since(time).as_secs_f64());
+    println!("{}", Instant::now().duration_since(time).as_millis());
     println!("{}", seeds.iter().map(|range| range.start).min().unwrap());
 }
