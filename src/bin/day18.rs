@@ -1,4 +1,4 @@
-use std::{time::Instant, cmp, collections::{BTreeSet, HashSet}};
+use std::time::Instant;
 
 use advent::readlines::read_lines;
 
@@ -16,10 +16,6 @@ fn main() {
     let time = Instant::now();
     let buffer: Vec<String> = read_lines("input/day18.txt");
     let mut lagoon = Vec::new();
-    let mut min_x = 0;
-    let mut max_x = 0;
-    let mut min_y = 0;
-    let mut max_y = 0;
     let mut perimeter = 0;
     let mut current_location = (0, 0);
 
@@ -45,7 +41,7 @@ fn main() {
         perimeter += steps;
     }
 
-    let mut result = fill_area(lagoon) + (perimeter / 2 + 1);
+    let result = fill_area(lagoon) + (perimeter / 2 + 1);
 
     println!("{}", Instant::now().duration_since(time).as_secs_f64());
     println!("{}", result);
